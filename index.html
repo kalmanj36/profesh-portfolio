@@ -5,25 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Professional Portfolio</title>
   <style>
-    body {
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      background-color: #DCE0E7;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      line-height: 1.6;
-    }
+<body>
 
-header {
-  position: relative; /* Needed for overlay */
-  text-align: center;
-  padding: 10px 100px;
-  background-image: url("images/tile.PNG"); 
-  background-size: 400px;
-  background-position: center;
-  background-repeat: repeat;
-  border-bottom: 15px double #262F42;
-}
+<div class="container">
+
+  <aside class="sidebar">
+
+    <img src="JillianKalman.jpeg" class="profile-pic">
+
+    <h1>Jillian Kalman</h1>
+
+    <h3>Data Scientist<br>Spatial Analyst<br>Researcher</h3>
+
+    <p>
+      I am a clinical research coordinator at the Penn Center
+      for Cancer Care Innovation and currently pursuing a
+      Masters of Urban Spatial Analytics at the University of
+      Pennsylvania Weitzman School of Design.
+    </p>
+
+    <div class="sidebar-links">
+      <a href="pdf/CV.pdf">CV</a>
+      <a href="https://github.com/kalmanj36">GitHub</a>
+      <a href="#">LinkedIn</a>
+      <a href="mailto:your@email.com">Email</a>
+    </div>
+
+  </aside>
+
+  <main class="content">
 
 /* Overlay to make text pop */
 header::before {
@@ -121,14 +131,9 @@ header p {
   </style>
 </head>
 <body>
-  <header>
-    <h1>Jillian Kalman</h1>
-    <p>Data Scientist • Spatial Analyst • Researcher</p>
-    <p>I am a clinical research coordinator at the Penn Center for Cancer Care Innovation and currently pursuing a Masters of Urban Spatial Analytics at the University of Pennsylvania Wietzman School of Design.</p>
-  </header>
+<h2 class="page-title">Selected Projects</h2>
 
-  <!-- Header navigation for categories -->
-  <nav>
+<nav>
     <a onclick="filterProjects('all')">All</a>
     <a onclick="filterProjects('race')">Race</a>
     <a onclick="filterProjects('health')">Health Equity</a>
@@ -246,5 +251,7 @@ header p {
       });
     }
   </script>
+    </main>
+</div>
 </body>
 </html>
