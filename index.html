@@ -1,250 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Professional Portfolio</title>
-  <style>
-    body {
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      background-color: #DCE0E7;
-      margin: 0;
-      padding: 0;
-      color: #333;
-      line-height: 1.6;
-    }
-
-header {
-  position: relative; /* Needed for overlay */
-  text-align: center;
-  padding: 10px 100px;
-  background-image: url("images/tile.PNG"); 
-  background-size: 400px;
-  background-position: center;
-  background-repeat: repeat;
-  border-bottom: 15px double #262F42;
-}
-
-/* Overlay to make text pop */
-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(45, 40, 60, 0.65);  /* Light semi-transparent overlay */
-  z-index: 0;
-}
-
-header h1,
-header p {
-  font-family: Roboto;
-  position: relative; /* Keep text above overlay */
-  z-index: 1;
-  text-shadow: 0px 2px 6px rgba(0,0,0,0.5); /* Stronger shadow for contrast */
-  color: #FEFFF2; /* Make text fully white for readability */
-}
-    nav {
-      text-align: center;
-      margin: 30px 0;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #323615;
-      font-weight: bold;
-      margin: 0 15px;
-      font-size: 1.1rem;
-      cursor: pointer;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-      color: #CD91DA;
-    }
-
-    .section-title {
-      font-size: 1.8rem;
-      margin: 50px auto 20px;
-      text-align: center;
-      font-family: "Palatino", sans-serif;
-      border-bottom: 3px solid #b2967d;
-      width: fit-content;
-      padding-bottom: 5px;
-    }
-
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      padding: 0 20px 60px;
-    }
-
-    .card {
-      background: #F9FAF1;
-      border: 2px solid #5E677B;
-      border-radius: 12px;
-      width: 260px;
-      padding: 15px;
-      box-shadow: 2px 2px 10px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 3px 3px 14px rgba(0,0,0,0.15);
-    }
-
-   
-    .card a {
-      text-decoration: none;
-      color: #323615;
-      font-weight: bold;
-      display: block;
-      margin-top: 10px;
-      text-align: center;
-      font-size: 1.1rem;
-    }
- .card img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 0.9rem;
-      color: #6c5c52;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Public Health & Spatial Analysis</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
-    <h1>Jillian Kalman</h1>
-    <p>Data Scientist • Spatial Analyst • Researcher</p>
-    <p>I am a clinical research coordinator at the Penn Center for Cancer Care Innovation and currently pursuing a Masters of Urban Spatial Analytics at the University of Pennsylvania Wietzman School of Design.</p>
-  </header>
 
-  <!-- Header navigation for categories -->
-  <nav>
-    <a onclick="filterProjects('all')">All</a>
-    <a onclick="filterProjects('race')">Race</a>
-    <a onclick="filterProjects('health')">Health Equity</a>
-    <a onclick="filterProjects('spanish')">Spanish Studies</a>
-    <a onclick="filterProjects('spatial')">Spatial</a>
-    <a onclick="filterProjects('comm')">Urban</a>
+<div class="sidebar">
 
-  </nav>
+    <img src="images/profile.jpg" class="profile-pic">
 
-  <!-- Projects grid -->
-  <div class="grid">
-    <div class="card" data-tags="health,race,spatial">
-      <a href="pdf/ih.pdf">
-          Inspector's Helper
-        <img src="images/curve.PNG" alt="Project Thumbnail" />
-      </a>
+    <h1>Your Name</h1>
+
+    <h2>Public Health Researcher<br>Spatial Analyst</h2>
+
+    <p class="bio">
+        I work at the intersection of public health,
+        spatial analysis, accessibility modeling,
+        and geographic information systems.
+        My research focuses on understanding
+        how place influences health outcomes
+        and access to services.
+    </p>
+
+    <div class="links">
+        <a href="#">CV</a>
+        <a href="#">GitHub</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Email</a>
     </div>
-       <div class="card" data-tags="spatial,race,comm">
-      
-        <img src="images/blue.PNG" alt="Project Thumbnail" />
-        Blue Security Lighting and the Urban Landscape
-      </a>
-    </div>
-    <div class="card" data-tags="spatial,comm">
-     
-        <img src="images/ep.PNG" alt="Project Thumbnail" />
-        East Passyunk Character Map
-      </a>
-    </div>
-    <div class="card" data-tags="health,race">
-      <a href="https://pc3i.upenn.edu/our-work/projects/italcs/">
-        <img src="images/pc3i.PNG" alt="Project Thumbnail" />
-        ITALCS: Integrating Telehealth to Advance Lung Cancer Screening
-      </a>
-    </div>
-    <div class="card" data-tags="health">
-      <a href="https://pc3i.upenn.edu/our-work/projects/thibang-diphatlha-testing-adaptive-strategies-to-close-the-gap-from-cervical-cancer-diagnosis-to-treatment-in-botswana/">
-      <img src="images/pc3i.PNG" alt="Project Thumbnail" />
-        Thibang Diphatlha: Testing Adaptive Strategies to Close the Gap From Cervical Cancer Diagnosis to Treatment in Botswana
-      </a>
-    </div>
-    <div class="card" data-tags="health">
-      <a href="https://pc3i.upenn.edu/our-work/projects/penn-trace/">
-       <img src="images/pc3i.PNG" alt="Project Thumbnail" />
-        Penn TRACE: Telehealth Research Center of Excellence at the University of Pennsylvania
-      </a>
-    </div>
-  <div class="card" data-tags="spanish,comm">
-  <a href="https://www.nyuliteracylab.com/book-deserts">
-    Book Deserts
-      <img src="images/nyu.PNG" alt="Project Thumbnail" />
-    
-  </a>
+
 </div>
 
-<div class="card" data-tags="spanish,comm">
-  <a href="https://www.nyuliteracylab.com/literacy-in-laundromats">
-    Literacy in Laundromats
-   <img src="images/nyu.PNG" alt="Project Thumbnail" />
-    
-  </a>
+<div class="content">
+
+    <section>
+        <h2>Featured Projects</h2>
+
+        <div class="project-card">
+            <h3>Enhanced Two-Step Floating Catchment Area Analysis</h3>
+            <p>
+                Spatial accessibility modeling of pharmacy services
+                using distance decay and network-based travel times.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>South Africa Pharmacy Access Study</h3>
+            <p>
+                National accessibility analysis across provinces
+                using walk and drive transportation networks.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>Philadelphia Environmental Equity Mapping</h3>
+            <p>
+                NDVI, canopy coverage, and walkability indicators
+                analyzed at the census tract level.
+            </p>
+        </div>
+
+    </section>
+
 </div>
 
-<div class="card" data-tags="spanish">
-  <a href="https://lafuerzadefamilias.org/en/">
-    La Fuerza de Creer Literacy
-    <img src="images/nyu.PNG" alt="Project Thumbnail" />
-    
-  </a>
-</div>
-    <div class="card" data-tags="health">
-      <a href="https://pc3i.upenn.edu/our-work/projects/ismart/">
-       <img src="images/pc3i.PNG" alt="Project Thumbnail" />
-        iSMART: Implementation Strategies for Monitoring Adherence in Real Time for Oral Anticancer Therapies
-      </a>
-    </div>
-    <!-- New Projects -->
-<div class="card" data-tags="healthcare,spanish,comm">
-  <a href="https://ldi.upenn.edu/our-work/research-updates/older-americans-in-subsidized-housing-suffer-more-frailty-and-dementia-and-are-sent-to-nursing-homes-more-often-than-peers/">
-    Improving Aging in Place in Subsidized Housing
-  </a>
-</div>
-
-
-
-<div class="card" data-tags="race,health">
-  <a href="https://pc3i.upenn.edu/our-work/projects/inudge/">
-     <img src="images/pc3i.PNG" alt="Project Thumbnail" />
-    DELVE: De-Implementation of Low-Value Cervical Cancer Screening
-  </a>
-</div>
- <div class="card" data-tags="health">
-  <a href="https://pc3i.upenn.edu/our-work/projects/inudge/">
-  <img src="images/pc3i.PNG" alt="Project Thumbnail" />
-    iNUDGE: Integration of Liquid Biopsy Based Next Generation Gene Sequencing in Newly Diagnosed NSCLC
-      </a>
-     </div>
-  </div>
-
-  <footer>
-  </footer>
-
-  <!-- JavaScript for filtering projects -->
-  <script>
-    function filterProjects(tag) {
-      const projects = document.querySelectorAll('.card');
-
-      projects.forEach(project => {
-        const tags = project.dataset.tags.split(',');
-        if(tag === 'all' || tags.includes(tag)) {
-          project.style.display = 'block';
-        } else {
-          project.style.display = 'none';
-        }
-      });
-    }
-  </script>
 </body>
 </html>
+
+
+:root{
+    --cream:#F4F0E8;
+    --plum:#5F4B66;
+    --sage:#8D9B84;
+    --charcoal:#2E2B2B;
+    --gold:#B49A67;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:var(--cream);
+    color:var(--charcoal);
+    font-family: "Segoe UI", sans-serif;
+    display:flex;
+}
+
+.sidebar{
+    width:320px;
+    min-height:100vh;
+    position:fixed;
+    left:0;
+    top:0;
+
+    background:#efe9df;
+
+    padding:40px;
+
+    border-right:1px solid rgba(0,0,0,.08);
+}
+
+.profile-pic{
+    width:170px;
+    border-radius:50%;
+    margin-bottom:25px;
+}
+
+.sidebar h1{
+    color:var(--plum);
+    margin-bottom:8px;
+}
+
+.sidebar h2{
+    color:var(--sage);
+    font-size:1rem;
+    font-weight:500;
+    margin-bottom:25px;
+}
+
+.bio{
+    line-height:1.7;
+    margin-bottom:30px;
+}
+
+.links{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.links a{
+    color:var(--plum);
+    text-decoration:none;
+    transition:.3s;
+}
+
+.links a:hover{
+    color:var(--gold);
+}
+
+.content{
+    margin-left:320px;
+    width:100%;
+    padding:60px;
+}
+
+.content h2{
+    color:var(--plum);
+    margin-bottom:30px;
+}
+
+.project-card{
+    background:white;
+
+    padding:30px;
+
+    border-left:5px solid var(--sage);
+
+    border-radius:12px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+}
+
+.project-card h3{
+    margin-bottom:10px;
+}
+
+.project-card:hover{
+    transform:translateY(-3px);
+    transition:.3s;
+}
