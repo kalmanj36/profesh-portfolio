@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Portfolio</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: #DCE0E7;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+header {
+  position: relative; /* Needed for overlay */
+  text-align: center;
+  padding: 10px 100px;
+  background-image: url("images/tile.PNG"); 
+  background-size: 400px;
+  background-position: center;
+  background-repeat: repeat;
+  border-bottom: 15px double #262F42;
+}
+
+/* Overlay to make text pop */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(45, 40, 60, 0.65);  /* Light semi-transparent overlay */
+  z-index: 0;
+}
+
+header h1,
+header p {
+  font-family: Roboto;
+  position: relative; /* Keep text above overlay */
+  z-index: 1;
+  text-shadow: 0px 2px 6px rgba(0,0,0,0.5); /* Stronger shadow for contrast */
+  color: #FEFFF2; /* Make text fully white for readability */
+}
+    nav {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #323615;
+      font-weight: bold;
+      margin: 0 15px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      color: #CD91DA;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin: 50px auto 20px;
+      text-align: center;
+      font-family: "Palatino", sans-serif;
+      border-bottom: 3px solid #b2967d;
+      width: fit-content;
+      padding-bottom: 5px;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 0 20px 60px;
+    }
+
+    .card {
+      background: #F9FAF1;
+      border: 2px solid #5E677B;
+      border-radius: 12px;
+      width: 260px;
+      padding: 15px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 3px 3px 14px rgba(0,0,0,0.15);
+    }
+
+   
+    .card a {
+      text-decoration: none;
+      color: #323615;
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+ .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #6c5c52;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jillian Kalman</h1>
+    <p>Data Scientist • Spatial Analyst • Researcher</p>
+    <p>I am a clinical research coordinator at the Penn Center for Cancer Care Innovation and currently pursuing a Masters of Urban Spatial Analytics at the University of Pennsylvania Wietzman School of Design.</p>
+  </header>
+
+  <!-- Header navigation for categories -->
+  <nav>
+    <a onclick="filterProjects('all')">All</a>
+    <a onclick="filterProjects('race')">Race</a>
+    <a onclick="filterProjects('health')">Health Equity</a>
+    <a onclick="filterProjects('spanish')">Spanish Studies</a>
+    <a onclick="filterProjects('spatial')">Spatial</a>
+    <a onclick="filterProjects('comm')">Urban</a>
+
+  </nav>
+
+  <!-- Projects grid -->
+  <div class="grid">
+    <div class="card" data-tags="health,race,spatial">
+      <a href="pdf/ih.pdf">
+          Inspector's Helper
+        <img src="images/curve.PNG" alt="Project Thumbnail" />
+      </a>
+    </div>
+       <div class="card" data-tags="spatial,race,comm">
+      
+        <img src="images/blue.PNG" alt="Project Thumbnail" />
+        Blue Security Lighting and the Urban Landscape
+      </a>
+    </div>
+    <div class="card" data-tags="spatial,comm">
+     
+        <img src="images/ep.PNG" alt="Project Thumbnail" />
+        East Passyunk Character Map
+      </a>
+    </div>
+    <div class="card" data-tags="health,race">
+      <a href="https://pc3i.upenn.edu/our-work/projects/italcs/">
+        <img src="images/pc3i.PNG" alt="Project Thumbnail" />
+        ITALCS: Integrating Telehealth to Advance Lung Cancer Screening
+      </a>
+    </div>
+    <div class="card" data-tags="health">
+      <a href="https://pc3i.upenn.edu/our-work/projects/thibang-diphatlha-testing-adaptive-strategies-to-close-the-gap-from-cervical-cancer-diagnosis-to-treatment-in-botswana/">
+      <img src="images/pc3i.PNG" alt="Project Thumbnail" />
+        Thibang Diphatlha: Testing Adaptive Strategies to Close the Gap From Cervical Cancer Diagnosis to Treatment in Botswana
+      </a>
+    </div>
+    <div class="card" data-tags="health">
+      <a href="https://pc3i.upenn.edu/our-work/projects/penn-trace/">
+       <img src="images/pc3i.PNG" alt="Project Thumbnail" />
+        Penn TRACE: Telehealth Research Center of Excellence at the University of Pennsylvania
+      </a>
+    </div>
+  <div class="card" data-tags="spanish,comm">
+  <a href="https://www.nyuliteracylab.com/book-deserts">
+    Book Deserts
+      <img src="images/nyu.PNG" alt="Project Thumbnail" />
+    
+  </a>
+</div>
+
+<div class="card" data-tags="spanish,comm">
+  <a href="https://www.nyuliteracylab.com/literacy-in-laundromats">
+    Literacy in Laundromats
+   <img src="images/nyu.PNG" alt="Project Thumbnail" />
+    
+  </a>
+</div>
+
+<div class="card" data-tags="spanish">
+  <a href="https://lafuerzadefamilias.org/en/">
+    La Fuerza de Creer Literacy
+    <img src="images/nyu.PNG" alt="Project Thumbnail" />
+    
+  </a>
+</div>
+    <div class="card" data-tags="health">
+      <a href="https://pc3i.upenn.edu/our-work/projects/ismart/">
+       <img src="images/pc3i.PNG" alt="Project Thumbnail" />
+        iSMART: Implementation Strategies for Monitoring Adherence in Real Time for Oral Anticancer Therapies
+      </a>
+    </div>
+    <!-- New Projects -->
+<div class="card" data-tags="healthcare,spanish,comm">
+  <a href="https://ldi.upenn.edu/our-work/research-updates/older-americans-in-subsidized-housing-suffer-more-frailty-and-dementia-and-are-sent-to-nursing-homes-more-often-than-peers/">
+    Improving Aging in Place in Subsidized Housing
+  </a>
+</div>
+
+
+
+<div class="card" data-tags="race,health">
+  <a href="https://pc3i.upenn.edu/our-work/projects/inudge/">
+     <img src="images/pc3i.PNG" alt="Project Thumbnail" />
+    DELVE: De-Implementation of Low-Value Cervical Cancer Screening
+  </a>
+</div>
+ <div class="card" data-tags="health">
+  <a href="https://pc3i.upenn.edu/our-work/projects/inudge/">
+  <img src="images/pc3i.PNG" alt="Project Thumbnail" />
+    iNUDGE: Integration of Liquid Biopsy Based Next Generation Gene Sequencing in Newly Diagnosed NSCLC
+      </a>
+     </div>
+  </div>
+
+  <footer>
+  </footer>
+
+  <!-- JavaScript for filtering projects -->
+  <script>
+    function filterProjects(tag) {
+      const projects = document.querySelectorAll('.card');
+
+      projects.forEach(project => {
+        const tags = project.dataset.tags.split(',');
+        if(tag === 'all' || tags.includes(tag)) {
+          project.style.display = 'block';
+        } else {
+          project.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
